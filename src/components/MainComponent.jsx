@@ -291,46 +291,48 @@ const MainComponent = () => {
   };
 
   return (
-    <div className='pl-12 pr-6 pb-30'>
-      <div className='searchMenu mt-[52px] bg-[#F2F2F2] flex justify-between rounded-md px-3 py-2.5'>
-        <Image src={searchIcon} alt='search Icon' />
-        <input
-          type='text'
-          placeholder='Search'
-          onChange={(e) => setSearch(e.target.value)}
-          className='focus:outline-none w-full bg-[#F2F2F2] ml-4'
-        />
-        <Image src={settingMenu} alt='setting Menu Icon' />
-      </div>
-
-      <div className='buttons mt-[42px] flex justify-between'>
-        <div className='left flex gap-[45px]'>
-          <button
-            onClick={() => addDuplicateItem(assessmentData.length - 1)}
-            className='bg-[#333333] py-2.5 px-3.5 text-white rounded-lg shadow-custom'
-          >
-            + Create Template
-          </button>
-          <button className='bg-[#333333] py-2.5 px-3.5 text-white rounded-lg shadow-custom'>
-            ? Search Discovery
-          </button>
+    <div className='bg-[#F5F5F5]'>
+      <div className='pl-12 pr-6'>
+        <div className='searchMenu mt-[52px] bg-[#F2F2F2] flex justify-between rounded-md px-3 py-2.5'>
+          <Image src={searchIcon} alt='search Icon' />
+          <input
+            type='text'
+            placeholder='Search'
+            onChange={(e) => setSearch(e.target.value)}
+            className='focus:outline-none w-full bg-[#F2F2F2] ml-4'
+          />
+          <Image src={settingMenu} alt='setting Menu Icon' />
         </div>
-        <div className='right'>
-          <div className='relative flex lg:max-w-sm'>
-            <select
-              onChange={(e) => {
-                handleSort(e.target.value);
-              }}
-              className=' pt-2 pb-2.5 px-3 text-gray-500 bg-white rounded-[21px] outline-none  '
+
+        <div className='buttons mt-[42px] flex justify-between'>
+          <div className='left flex gap-[45px]'>
+            <button
+              onClick={() => addDuplicateItem(assessmentData.length - 1)}
+              className='bg-[#333333] py-2.5 px-3.5 text-white rounded-lg shadow-custom'
             >
-              <option>Random</option>
-              <option selected>Alphabetically</option>
-            </select>
+              + Create Template
+            </button>
+            <button className='bg-[#333333] py-2.5 px-3.5 text-white rounded-lg shadow-custom'>
+              ? Search Discovery
+            </button>
+          </div>
+          <div className='right'>
+            <div className='relative flex lg:max-w-sm'>
+              <select
+                onChange={(e) => {
+                  handleSort(e.target.value);
+                }}
+                className=' pt-2 pb-2.5 px-3 text-gray-500 bg-white rounded-[21px] outline-none  '
+              >
+                <option>Random</option>
+                <option selected>Alphabetically</option>
+              </select>
+            </div>
           </div>
         </div>
-      </div>
 
-      <Table columns={columns} data={data} />
+        <Table columns={columns} data={data} />
+      </div>
     </div>
   );
 };
