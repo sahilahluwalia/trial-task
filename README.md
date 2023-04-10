@@ -1,5 +1,7 @@
 ## Sample Single Page for James Smith's Trial Task
 
+[DEPLOYED LINK](https://trial-task-ecru.vercel.app/)
+
 ### Tech Stack
 
 Next.js, Tailwind CSS with JavaScript.
